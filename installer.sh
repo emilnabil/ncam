@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # 
-# SCRIPT : DOWNLOAD AND INSTALL EMU NCAM #
+# SCRIPT : DOWNLOAD AND INSTALL EMU CCCAM #
 # ======================================================================================
 # Command: wget https://raw.githubusercontent.com/emilnabil/ncam/main/installer.sh -O - | /bin/sh #
 # ======================================================================================
@@ -21,10 +21,10 @@ MY_DEB="ncam_11.90_all.deb"
 MY_MAIN_URL="https://raw.githubusercontent.com/emilnabil/"
 if which dpkg > /dev/null 2>&1; then
 	MY_FILE=$MY_DEB
-	MY_URL=$MY_MAIN_URL$PACKAGE_DIR'/'$MY_DEB
+	MY_URL=$MY_MAIN_URL${PACKAGE_DIR}/${MY_DEB}
 else
 	MY_FILE=$MY_IPK
-	MY_URL=$MY_MAIN_URL$PACKAGE_DIR'/'$MY_IPK
+	MY_URL=$MY_MAIN_URL${PACKAGE_DIR}/${MY_IPK}
 fi
 MY_TMP_FILE="/tmp/"$MY_FILE
 
@@ -32,9 +32,9 @@ echo ''
 echo '************************************************************'
 echo '**                         STARTED                        **'
 echo '************************************************************'
-#            # Uploaded Script By Biko_73 #                
-# AND MODIFY Script To Work  Emu Ncam                                     
-            #  BY EMIL_NABIL #
+#          # Uploaded Script By  Biko_73 #                
+# AND MODIFY Script To Work Emu Ncam BY    
+                     # EMIL_NABIL  #
 echo "************************************************************"
 echo ''
 
@@ -60,7 +60,7 @@ if [ -f $MY_TMP_FILE ]; then
 	if which dpkg > /dev/null 2>&1; then
 		apt-get install --reinstall $MY_TMP_FILE -y
 	else
-	opkg install --force-reinstall $MY_TMP_FILE
+		opkg install --force-reinstall $MY_TMP_FILE
 	fi
 	MY_RES=$?
 
@@ -68,15 +68,30 @@ if [ -f $MY_TMP_FILE ]; then
 	echo ''
 	echo ''
 	if [ $MY_RES -eq 0 ]; then
-echo "*************************************************************************************************************************"
+		echo "   >>>>   SUCCESSFULLY INSTALLED   <<<<"
+		echo ''
+		echo " >>>> Please RESTARING ENIGMA       <<<<"
+		if which systemctl > /dev/null 2>&1; then
+			sleep 2;
+		else
+			echo "*********************************"
+echo "
+  888888======8===8========8===8
+  8==========8=8=8=8=======8===8
+  888888====8===8===8======8===8   
+  8========8=========8=====8===8 
+  888888==8===========8====8===888888 "
+		fi
+	else
 		echo "   >>>>   INSTALLATION FAILED !   <<<<"
 	fi;
 	echo ''
 	echo '**************************************************'
 	echo '**                   FINISHED                   **'
 	echo '**************************************************'
-	echo ''   
-   wait 2;   
+	echo ''
+echo ""
+   wait  
 	exit 0
 else
 	echo ''
@@ -85,8 +100,6 @@ else
 fi
 
 # 
-
-
 
 
 
