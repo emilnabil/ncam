@@ -32,9 +32,9 @@ echo ''
 echo '************************************************************'
 echo '**                         STARTED                        **'
 echo '************************************************************'
-#            # WRITE Script By Biko_73 #                
+#            # Uploaded Script By Biko_73 #                
 # AND MODIFY Script To Work  Emu Ncam                                     
-             # BY EMIL_NABIL #
+            #  BY EMIL_NABIL #
 echo "************************************************************"
 echo ''
 
@@ -60,7 +60,7 @@ if [ -f $MY_TMP_FILE ]; then
 	if which dpkg > /dev/null 2>&1; then
 		apt-get install --reinstall $MY_TMP_FILE -y
 	else
-		opkg install --force-reinstall $MY_TMP_FILE
+	opkg install --force-reinstall $MY_TMP_FILE
 	fi
 	MY_RES=$?
 
@@ -85,6 +85,8 @@ else
 fi
 
 # 
+
+
 
 
 
