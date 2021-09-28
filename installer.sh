@@ -33,7 +33,7 @@ echo '************************************************************'
 echo '**                         STARTED                        **'
 echo '************************************************************'
 #          # Uploaded Script By  Biko_73 #                
-# AND MODIFY Script To Work Emu Ncam BY    
+# AND Modify the script to download Emu Ncam BY    
                      # EMIL_NABIL  #
 echo "************************************************************"
 echo ''
