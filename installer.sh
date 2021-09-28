@@ -31,7 +31,7 @@ set -e
 	fi
 echo "================================="
 set +e
-chmod 755 /usr/bin/CCcam239
+chmod 755 /usr/bin/ncam
 cd ..
 wait
 rm -f /tmp/$MY_IPK
@@ -61,6 +61,7 @@ echo "#########################################################"
    wait 2;
     sleep 2;
   exit    
+
 
 
 
