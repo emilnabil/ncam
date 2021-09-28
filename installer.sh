@@ -37,9 +37,9 @@ wait
 rm -f /tmp/$MY_IPK
 rm -f /tmp/$MY_DEB
 	if [ $? -eq 0 ]; then
-		echo "   >>>>   SUCCESSFULLY INSTALLED   <<<<"
+echo ">>>>  SUCCESSFULLY INSTALLED <<<<"
 fi
-		echo "***********************************************"*********************************"
+		echo "********************************************************************************"
 echo "   UPLOADED BY  >>>>   EMIL_NABIL "   
 sleep 4;
 		echo ". >>>>         RESTARING     <<<<"
@@ -61,6 +61,7 @@ echo "#########################################################"
    wait 2;
     sleep 2;
   exit    
+
 
 
 
