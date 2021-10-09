@@ -7,8 +7,8 @@ echo " download and install emu ncam "
 version=12.0
 OPKGINSTALL=opkg install --force-overwrite
 MY_URL="https://raw.githubusercontent.com/emilnabil/ncam/main"
-MY_IPK="enigma2-plugin-softcams-ncam_12.0.ipk"
-MY_DEB="enigma2-plugin-softcams-ncam_12.0.deb"
+MY_IPK="enigma2-plugin-softcams-ncam_12.2_all.ipk"
+MY_DEB="enigma2-plugin-softcams-ncam_12.2_all.deb"
 ##############################################################################
 # remove old emu #
 opkg remove enigma2-plugin-softcams-ncam
@@ -27,7 +27,7 @@ set -e
      wget "$MY_URL/$MY_DEB"
 
  if which dpkg > /dev/null 2>&1; then
-		apt-get install --reinstall $MY_DEB -y
+		dpkg -i --force-overwrite $MY_DEB; apt-get install -f -y
 	else
 		opkg install --force-reinstall $MY_IPK
 	fi
@@ -46,10 +46,11 @@ echo "   UPLOADED BY  >>>>   EMIL_NABIL "
 sleep 4;
 		echo '========================================================================================================================='
 ##########################################                                                                                                                  
-echo " PLEASE  RESTART ENIGMA  NOW " 
+echo " PLEASE RESTART YOUR DEVICE NOW " 
 echo "**********************************************************************************"
 wait
 exit 0
+
 
 
 
