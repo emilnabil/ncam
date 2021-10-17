@@ -4,7 +4,7 @@
 #
 echo " download and install emu ncam "
 
-version=12.0
+version=12.2
 OPKGINSTALL=opkg install --force-overwrite
 MY_URL="https://raw.githubusercontent.com/emilnabil/ncam/main"
 MY_IPK="enigma2-plugin-softcams-ncam_12.2_all.ipk"
@@ -14,6 +14,9 @@ MY_DEB="enigma2-plugin-softcams-ncam_12.2_all.deb"
 opkg remove enigma2-plugin-softcams-ncam
 
 #################################################################################
+echo " install libcur "
+opkg install libcurl4
+
 # Remove previous files #
 cd /tmp
 
@@ -44,12 +47,16 @@ fi
 		echo "********************************************************************************"
 echo "   UPLOADED BY  >>>>   EMIL_NABIL "   
 sleep 4;
-		echo '========================================================================================================================='
-##########################################                                                                                                                  
-echo " PLEASE RESTART YOUR DEVICE NOW " 
+	echo '========================================================================================================================='
+###########################################                                                                                                                  
+echo ". >>>>         RESTARING     <<<<"
 echo "**********************************************************************************"
 wait
+killall -9 enigma2
 exit 0
+
+
+
 
 
 
