@@ -4,7 +4,7 @@
 #
 echo " download and install emu ncam "
 
-version=12.2
+version=12.3
 OPKGINSTALL=opkg install --force-overwrite
 MY_URL="https://raw.githubusercontent.com/emilnabil/ncam/main"
 MY_IPK="enigma2-plugin-softcams-ncam_12.3_all.ipk"
