@@ -25,22 +25,28 @@ rm -rf * > /dev/null 2>&1
 # Download and install plugin #
 
 set -e
-     wget "$MY_URL/$MY_IPK"
+    
   wait
-     wget "$MY_URL/$MY_DEB"
-
+     
  if which dpkg > /dev/null 2>&1; then
+wget "$MY_URL/$MY_DEB"
+sleep 2;
 		dpkg -i --force-overwrite $MY_DEB; apt-get install -f -y
-	else
-		opkg install --force-reinstall $MY_IPK
-	fi
+cd ..
+wait
+	rm -f /tmp/$MY_DEB
+else
+wget "$MY_URL/$MY_IPK"
+sleep 2;
+opkg install --force-overwrite $MY_IPK
+	cd ..
+wait
+rm -f /tmp/$MY_IPK
+fi
 echo "================================="
 set +e
 chmod 755 /usr/bin/ncam
-cd ..
-wait
-rm -f /tmp/$MY_IPK
-rm -f /tmp/$MY_DEB
+
 	if [ $? -eq 0 ]; then
 echo ">>>>  SUCCESSFULLY INSTALLED <<<<"
 fi
@@ -54,6 +60,7 @@ echo "**************************************************************************
 wait
 killall -9 enigma2
 exit 0
+
 
 
 
